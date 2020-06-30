@@ -1,0 +1,14 @@
+.page-main {
+    padding: 3rem;
+    padding-top: 12rem;
+    min-height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    .line {
+        width: 32px;
+        height: 2px;
+        background-color: #0d5983;
+        margin: 1rem 0;
+    }
+}

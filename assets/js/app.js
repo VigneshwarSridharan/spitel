@@ -1,8 +1,20 @@
 $(document).ready(function () {
 
+    if($('.works-wrpper .row').length) {
+        var $grid = $('.works-wrpper .row').isotope();
+    
+        $('.filter-wrapper .filter-item').on('click', function () {
+            $grid.isotope({ filter: $(this).data('filter') })
+            $('.filter-wrapper .filter-item').removeClass('active')
+            $(this).addClass('active')
+        })
+    }
+
     $('.technology-slider').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
+        autoplay: true,
+        //   autoplaySpeed: 2000,
         responsive: [
             {
                 breakpoint: 990,
@@ -19,6 +31,7 @@ $(document).ready(function () {
         ]
     })
 
+    $('.slick').slick();
 
 
 })
@@ -30,14 +43,16 @@ $(window).on('load', function () {
     }, 500);
 })
 
+var lastPos = $(window).scrollTop()
 $(window).on('scroll', function () {
     var scroll = $(window).scrollTop();
-    if (scroll > 100) {
+    if (scroll > lastPos) {
         $('.navigation-wrapper').addClass('active')
     }
     else {
         $('.navigation-wrapper').removeClass('active')
     }
+    lastPos = scroll;
 })
 
 

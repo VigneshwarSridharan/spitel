@@ -79,22 +79,26 @@
 .our-works {
     .filter-wrapper {
         margin-bottom: 1rem;
+        display: flex;
+        overflow-x: auto;
         .filter-item {
+            white-space: nowrap;
             padding: 1rem 1.5rem;
             border-radius: 10rem;
             background-color: #ffffff;
             cursor: pointer;
             display: inline-block;
-            box-shadow: $box-shadow;
+            box-shadow: $box-shadow-sm;
             font-weight: 600;
             transition: all .25s ease;
-            margin-right: 1rem;
-            margin-bottom: 1rem;
+            // margin-right: 1rem;
+            margin: 1rem .5rem;
+            align-self: center;
             img {
                 margin-right: .5rem;
                 
             }
-            &:hover {
+            &:hover,&.active {
                 background-color: #0483B9;
                 color: #ffffff;
                 img {
@@ -147,6 +151,7 @@
 }
 
 .our-testimonials {
+    overflow: hidden;
     @include media-breakpoint-up(lg) {
         border-right: solid 1px $border-color;
     }
@@ -165,12 +170,19 @@
         padding: 2rem 2rem 1rem;
         border-bottom: solid 1px rgba(255, 255, 255, 0.4);
         line-height: 29px;
+        img {
+            display: inline-block;
+        }
     }
     .customer {
         padding: 1rem;
         text-align: center;
         font-weight: 600;
     }
+}
+
+.our-blog {
+    overflow: hidden;
 }
 
 .blog-item {
@@ -201,6 +213,8 @@
         padding: .8rem 1rem;
         font-family: "eurostile";
         font-weight: bold;
+        display: flex;
+        align-items: center;
         cursor: pointer;
         transition: all .25s ease;
         img {
@@ -217,6 +231,10 @@
             }
         }
     }
+}
+
+.our-clients {
+    overflow: hidden;
 }
 
 .contact-wrpper {

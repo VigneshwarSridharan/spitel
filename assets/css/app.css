@@ -10037,6 +10037,16 @@ h3 {
   }
 }
 
+.anchor {
+  text-decoration: none;
+  display: inherit;
+  color: inherit;
+}
+.anchor:hover, .anchor:visited, .anchor:active, .anchor:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
 .app-btn {
   text-transform: uppercase;
   display: inline-block;
@@ -10104,6 +10114,9 @@ h3 {
 }
 
 .app-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   border-radius: 5px;
   background-color: #ffffff;
   overflow: hidden;
@@ -10145,6 +10158,7 @@ h3 {
 .app-card .app-btn {
   display: block;
   margin: 0 1rem;
+  margin-top: auto;
 }
 
 .app-header {
@@ -10217,27 +10231,30 @@ h3 {
 }
 .our-works .filter-wrapper {
   margin-bottom: 1rem;
+  display: flex;
+  overflow-x: auto;
 }
 .our-works .filter-wrapper .filter-item {
+  white-space: nowrap;
   padding: 1rem 1.5rem;
   border-radius: 10rem;
   background-color: #ffffff;
   cursor: pointer;
   display: inline-block;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   font-weight: 600;
   transition: all 0.25s ease;
-  margin-right: 1rem;
-  margin-bottom: 1rem;
+  margin: 1rem 0.5rem;
+  align-self: center;
 }
 .our-works .filter-wrapper .filter-item img {
   margin-right: 0.5rem;
 }
-.our-works .filter-wrapper .filter-item:hover {
+.our-works .filter-wrapper .filter-item:hover, .our-works .filter-wrapper .filter-item.active {
   background-color: #0483B9;
   color: #ffffff;
 }
-.our-works .filter-wrapper .filter-item:hover img {
+.our-works .filter-wrapper .filter-item:hover img, .our-works .filter-wrapper .filter-item.active img {
   filter: invert(1) brightness(100);
 }
 .our-works .works-wrpper .work-item {
@@ -10276,6 +10293,9 @@ h3 {
   margin-bottom: 1rem;
 }
 
+.our-testimonials {
+  overflow: hidden;
+}
 @media (min-width: 992px) {
   .our-testimonials {
     border-right: solid 1px #dee2e6;
@@ -10299,10 +10319,17 @@ h3 {
   border-bottom: solid 1px rgba(255, 255, 255, 0.4);
   line-height: 29px;
 }
+.testimonials-card .content img {
+  display: inline-block;
+}
 .testimonials-card .customer {
   padding: 1rem;
   text-align: center;
   font-weight: 600;
+}
+
+.our-blog {
+  overflow: hidden;
 }
 
 .blog-item {
@@ -10333,6 +10360,8 @@ h3 {
   padding: 0.8rem 1rem;
   font-family: "eurostile";
   font-weight: bold;
+  display: flex;
+  align-items: center;
   cursor: pointer;
   transition: all 0.25s ease;
 }
@@ -10348,6 +10377,10 @@ h3 {
 }
 .blog-item:hover .footer-btn img {
   filter: invert(1) brightness(100);
+}
+
+.our-clients {
+  overflow: hidden;
 }
 
 .contact-wrpper {
@@ -10457,6 +10490,21 @@ h3 {
 footer {
   background-color: #004F87;
   color: #ffffff;
+}
+
+.page-main {
+  padding: 3rem;
+  padding-top: 12rem;
+  min-height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+.page-main .line {
+  width: 32px;
+  height: 2px;
+  background-color: #0d5983;
+  margin: 1rem 0;
 }
 
 /*# sourceMappingURL=app.css.map */

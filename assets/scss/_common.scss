@@ -126,6 +126,16 @@
     }
 }
 
+.anchor {
+    text-decoration: none;
+    display: inherit;
+    color: inherit;
+    &:hover,&:visited,&:active,&:focus {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
 .app-btn {
     text-transform: uppercase;
     display: inline-block;
@@ -195,6 +205,9 @@
 }
 
 .app-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     border-radius: 5px;
     background-color: #ffffff;
     overflow: hidden;
@@ -238,5 +251,6 @@
     .app-btn {
         display: block;
         margin: 0 1rem;
+        margin-top: auto;
     }
 }
