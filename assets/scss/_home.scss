@@ -1,8 +1,22 @@
 .app-header {
+    overflow: hidden;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 1;
+    .bg-video {
+        object-fit: cover;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+    }
 }
 
 .why-choose-us-item, .our-process-item {
