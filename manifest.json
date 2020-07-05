@@ -4,7 +4,13 @@
   "theme_color": "#06bfc1",
   "background_color": "#ffffff",
   "display": "standalone",
-  "Scope": "./",
+  "Scope": [
+    "./",
+    "./mobile-application-development.html",
+    "./website-development.html",
+    "./digital-marketing.html",
+    "./software-development.html"
+  ],
   "start_url": "./",
   "icons": [
     {
