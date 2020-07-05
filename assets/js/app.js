@@ -1,6 +1,8 @@
 $(document).ready(function () {
 
-    
+    setTimeout(() => {
+        hideLoader()
+    }, 3000);
 
     $('.technology-slider').slick({
         slidesToShow: 3,
@@ -28,15 +30,20 @@ $(document).ready(function () {
 
 })
 
-$(window).on('load', function () {
+function hideLoader() {
     $('.app-preloader').fadeOut(500)
+
     setTimeout(() => {
         $('.navigation-wrapper').removeClass('is-loaded')
     }, 500);
+}
 
-    if($('.works-wrpper .row').length) {
+$(window).on('load', function () {
+    hideLoader();
+
+    if ($('.works-wrpper .row').length) {
         var $grid = $('.works-wrpper .row').isotope();
-    
+
         $('.filter-wrapper .filter-item').on('click', function () {
             $grid.isotope({ filter: $(this).data('filter') })
             $('.filter-wrapper .filter-item').removeClass('active')
@@ -45,29 +52,14 @@ $(window).on('load', function () {
     }
 })
 
-var lastPos = $(window).scrollTop()
-$(window).on('scroll', function () {
-    var scroll = $(window).scrollTop();
-    if (scroll > lastPos) {
-        $('.navigation-wrapper').addClass('active')
-    }
-    else {
-        $('.navigation-wrapper').removeClass('active')
-    }
-    lastPos = scroll;
-})
 
-
-function initMap() {
-    // The location of Uluru
-    var uluru = { lat: 15.367083, lng: 75.137639 };
-    // The map, centered at Uluru
-    var map = new google.maps.Map(
-        document.getElementById('map'), {
-        zoom: 4,
-        center: uluru,
-        styles: mapStyles
+if ('serviceWorker' in navigator) {
+    console.log('CLIENT: service worker registration in progress.');
+    navigator.serviceWorker.register('/service-worker.js').then(function () {
+        console.log('CLIENT: service worker registration complete.');
+    }, function () {
+        console.log('CLIENT: service worker registration failure.');
     });
-    // The marker, positioned at Uluru
-    var marker = new google.maps.Marker({ position: uluru, map: map });
+} else {
+    console.log('CLIENT: service worker is not supported.');
 }
