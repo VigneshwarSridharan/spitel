@@ -61,10 +61,14 @@
             &:last-child {
                 border: none;
             }
-            @include media-breakpoint-down(sm) {
-                padding: .5rem;
+            @include media-breakpoint-down(md) {
+                padding: .25rem !important;
+                border: none;
                 span {
                     display: none;
+                }
+                img {
+                    margin: 0;
                 }
             }
         }
@@ -122,6 +126,11 @@
                     height: 40px !important;
                 }
             }
+        }
+    }
+    @include media-breakpoint-down(md) {
+        .navbar-collapse {
+            padding-top: 30px;
         }
     }
 }
