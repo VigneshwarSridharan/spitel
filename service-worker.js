@@ -18,9 +18,9 @@ self.addEventListener("install", function (event) {
                    after making HTTP requests for each of them.
                 */
                 return cache.addAll([
-                    '/',
-                    '/assets/css/app.min.css',
-                    '/assets/js/app.min.js'
+                    './',
+                    './assets/css/app.min.css',
+                    './assets/js/app.min.js'
                 ]);
             })
             .then(function () {
