@@ -28,6 +28,37 @@ $(document).ready(function () {
     $('.slick').slick();
 
 
+    $('#contact-us').on('submit', function(e) {
+        e.preventDefault();
+        let data = $(this).serializeArray()
+        let form = this
+        $.ajax({
+            url:'./mail/mail.php',
+            method:'POST',
+            data,
+            success: function(res) {
+                $('#form-result').html(`
+                <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                    <strong>Success!</strong> We will contact soon.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                `)
+                form.reset()
+            },
+            error: function(res) {
+                $('#form-result').html(`
+                <div class="alert alert-error alert-dismissible fade show mt-3" role="alert">
+                    <strong>Sorry!</strong> Something went wrong.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                `)
+            },
+        })
+    })
 })
 
 function hideLoader() {
