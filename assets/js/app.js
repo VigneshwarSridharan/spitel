@@ -28,15 +28,15 @@ $(document).ready(function () {
     $('.slick').slick();
 
 
-    $('#contact-us').on('submit', function(e) {
+    $('#contact-us').on('submit', function (e) {
         e.preventDefault();
         let data = $(this).serializeArray()
         let form = this
         $.ajax({
-            url:'./mail/mail.php',
-            method:'POST',
+            url: './mail/mail.php',
+            method: 'POST',
             data,
-            success: function(res) {
+            success: function (res) {
                 $('#form-result').html(`
                 <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
                     <strong>Success!</strong> We will contact soon.
@@ -47,7 +47,7 @@ $(document).ready(function () {
                 `)
                 form.reset()
             },
-            error: function(res) {
+            error: function (res) {
                 $('#form-result').html(`
                 <div class="alert alert-error alert-dismissible fade show mt-3" role="alert">
                     <strong>Sorry!</strong> Something went wrong.
@@ -58,6 +58,20 @@ $(document).ready(function () {
                 `)
             },
         })
+    })
+
+    $('.navbar .nav-item .nav-link, footer .anchor').on('click', function (e) {
+        e.preventDefault();
+        var id = $(this).attr('href');
+        var $elm = $(id)
+        if ($elm.length) {
+            
+            let pos = $elm.offset().top;
+            $(document).animate({
+                scrollTop: pos+150
+            })
+        }
+
     })
 })
 
@@ -84,13 +98,13 @@ $(window).on('load', function () {
 })
 
 
-if ('serviceWorker' in navigator) {
-    console.log('CLIENT: service worker registration in progress.');
-    navigator.serviceWorker.register('./service-worker.js').then(function () {
-        console.log('CLIENT: service worker registration complete.');
-    }, function () {
-        console.log('CLIENT: service worker registration failure.');
-    });
-} else {
-    console.log('CLIENT: service worker is not supported.');
-}
+// if ('serviceWorker' in navigator) {
+//     console.log('CLIENT: service worker registration in progress.');
+//     navigator.serviceWorker.register('./service-worker.js').then(function () {
+//         console.log('CLIENT: service worker registration complete.');
+//     }, function () {
+//         console.log('CLIENT: service worker registration failure.');
+//     });
+// } else {
+//     console.log('CLIENT: service worker is not supported.');
+// }
