@@ -67,7 +67,7 @@ $(document).ready(function () {
         if ($elm.length) {
             
             let pos = $elm.offset().top;
-            $(document).animate({
+            $("html, body").animate({
                 scrollTop: pos+150
             })
         }
