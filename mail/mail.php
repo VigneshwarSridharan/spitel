@@ -56,11 +56,11 @@ $template = str_replace("[content]",
 ,$template);
 
 
-$to_email = $email.', info@spitel.com';
+$to_email = $email.', info.spitel@gmail.com';
 $subject = 'Enquiry Mail from '.$first_name;
 $message = 'This mail is sent using the PHP mail function';
 $headers  = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-$headers .= 'From: info@spitel.com';
+$headers .= 'From: info.spitel@gmail.com';
 mail($to_email,$subject,$template,$headers);
 ?>
