@@ -11457,9 +11457,8 @@ h3 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-size: cover;
-  -webkit-background-size: initial;
   background-position: 50% 50%;
+  background-size: cover;
   background-attachment: fixed;
   background-image: url("../images/banner.jpg");
   z-index: 1;
