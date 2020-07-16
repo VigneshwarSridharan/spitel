@@ -11457,7 +11457,6 @@ h3 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  position: relative;
   background-size: cover;
   background-position: 50% 50%;
   background-attachment: fixed;
